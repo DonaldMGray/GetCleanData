@@ -28,7 +28,7 @@ with contents as they were originally organized.
 
 
 Output:
-Two final output is the file "subjectActivitySummary.csv".  
+The final output is the file "subjectActivitySummary.csv".  
 Columns are: subject, activity, variable, value (see CodeBook.md for more details)
 
 There is also an intermediate output which has all observations for the test and training subjects

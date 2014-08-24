@@ -3,14 +3,25 @@ title: "CodeBook.md"
 output: html_document
 ---
 
-CodeBook
+---
+Summary
+---
+Data is the mean of all observations for 30 subjects each engaged in 6 activities.
+For each subject-activity combination and each of 86 sensor readings, all observations were averaged.
+This produces a final list of subject-activity-measurement
 
+
+---
+CodeBook
+---
 Subject: 
-  1:30 - subjects for the study
+  Subjects for the study
+  Entries: 1:30
   
 Activity:
   Indicates which of six activities were happening when the sample was taken
-  Acitivies are one of:
+  
+  Entries:
     LAYING
     SITTING
     STANDING
@@ -18,8 +29,10 @@ Activity:
     WALKING_DOWNSTAIRS
     WALKING_UPSTAIRS
 
+
 Variable:
   Sensor measurements (means and std's)
+  Entries:
    [1] tBodyAcc-mean()-X                    tBodyAcc-mean()-Y                   
  [3] tBodyAcc-mean()-Z                    tBodyAcc-std()-X                    
  [5] tBodyAcc-std()-Y                     tBodyAcc-std()-Z                    
@@ -65,3 +78,8 @@ Variable:
 [85] angle(Y,gravityMean)                 angle(Z,gravityMean) 
 
 
+Value:
+  Averaged measurements for observations
+  Entries: floating point number
+  
+  
