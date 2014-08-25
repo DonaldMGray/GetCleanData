@@ -6,22 +6,32 @@ output: html_document
 ---
 Summary
 ---
-Data is the mean of all observations for 30 subjects each engaged in 6 activities.
-For each subject-activity combination and each of 86 sensor readings, all observations were averaged.
-This produces a final list of subject-activity-measurement
+Data is the averaged output for all measurements of 30 subjects each engaged in 6 activities.
 
+Original source data included several measurements of 561 distinct variables.  This data only includes the 86 variables which have the terms "mean" or "std" and averages all observations for a Subject-activity combination.
+
+This produces a final data.frame of subject-activity-measurements which is 15480 rows by 4 columns
+This is a "skinny" data.frame, with a single variable per row
+Each row is the average of a measured variable for a subject-activity combination.
+The columns are:
+-Subject
+-Activity
+-Variable
+-Value
+
+See README.md for more how to execute the script
 
 ---
 CodeBook
 ---
-Subject: 
-  Subjects for the study
-  Entries: 1:30
+Subject column: 
+  Subjects for the study, by numeric ID
+  Values: 1:30
   
-Activity:
+Activity column:
   Indicates which of six activities were happening when the sample was taken
   
-  Entries:
+  Values:
     LAYING
     SITTING
     STANDING
@@ -30,11 +40,42 @@ Activity:
     WALKING_UPSTAIRS
 
 
-Variable:
-  Sensor measurements (means and std's)
-  Entries:
+Variable column:
+  See: 'UCI HAR Dataset/features_info.txt' for full details of the original data set
+  Excerpt: 
+    The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.   
+    Body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
   
-   [1] tBodyAcc-mean()-X                   
+    A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+  These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+    tBodyAcc-XYZ
+    tGravityAcc-XYZ
+    tBodyAccJerk-XYZ
+    tBodyGyro-XYZ
+    tBodyGyroJerk-XYZ
+    tBodyAccMag
+    tGravityAccMag
+    tBodyAccJerkMag
+    tBodyGyroMag
+    tBodyGyroJerkMag
+    fBodyAcc-XYZ
+    fBodyAccJerk-XYZ
+    fBodyGyro-XYZ
+    fBodyAccMag
+    fBodyAccJerkMag
+    fBodyGyroMag
+    fBodyGyroJerkMag
+
+  The set of variables that were estimated from these signals are: 
+    mean(): Mean value
+    std(): Standard deviation
+  
+  Values:
+  
+ [1] tBodyAcc-mean()-X                   
  [2] tBodyAcc-mean()-Y                   
  [3] tBodyAcc-mean()-Z                   
  [4] tBodyAcc-std()-X                    
@@ -123,8 +164,8 @@ Variable:
 
 
 
-Value:
+Value column:
   Averaged measurements for observations
-  Entries: floating point number
+  Values: floating point number bounded [-1,1]
   
   
